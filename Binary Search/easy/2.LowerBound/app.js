@@ -9,6 +9,7 @@ function findLowerBound(nums, target) {
       ans = mid;
       high = mid - 1;
     } else {
+
       low = mid + 1;
     }
   }
