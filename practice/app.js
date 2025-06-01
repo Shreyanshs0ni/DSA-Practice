@@ -1,6 +1,3 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
+const x = "121";
+
+console.log(first)
