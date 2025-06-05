@@ -15,7 +15,7 @@ function arrToLL(arr) {
   return head;
 }
 
-function print(head) {
+function printLL(head) {
   let current = head;
   let result = [];
   while (current !== null) {
@@ -43,9 +43,9 @@ const k = 2;
 let ll = arrToLL(arr); // ✅ Convert array to linked list
 
 console.log("Before deleting:");
-print(ll);
+printLL(ll);
 
 ll = deleteByPosition(ll, k); // ✅ Pass the linked list, not the array
 
 console.log("After deleting:");
-print(ll);
+printLL(ll);

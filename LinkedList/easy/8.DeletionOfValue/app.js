@@ -35,7 +35,7 @@ function deleteByValue(head, k) {
   return head;
 }
 
-function print(head) {
+function printLL(head) {
   let current = head;
   let result = [];
   while (current !== null) {
@@ -56,4 +56,4 @@ print(ll);
 ll = deleteByValue(ll, k); // ✅ Pass the linked list, not the array
 
 console.log("After deleting:");
-print(ll);
+printLL(ll);
