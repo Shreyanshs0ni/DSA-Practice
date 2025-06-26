@@ -32,7 +32,7 @@ const head = arrToLL([1, 2, 3, 4, 5]);
 let temp = head;
 while (temp.next !== null) {
   temp = temp.next;
-}
+} 
 temp.next = head.next.next; // Node with value 3
 
 console.log(detectLoop(head)); // true
