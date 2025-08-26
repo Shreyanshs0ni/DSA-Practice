@@ -1,18 +1,18 @@
 var clearDigits = function (s) {
   let stack = [];
 
-  //push characters only not digits
   for (let char of s) {
-    if (char < "0" || char > "9") {
+    if (char >= "0" && char <= "9") {
+      if (stack.length > 0) {
+        stack.pop();
+      }
+    } else {
       stack.push(char);
     }
   }
-  let result = "";
-  while (stack.length > 0) {
-    result = stack.pop() + result; //this is to maintain order
-  }
-  return result;
+  return stack.join("");
 };
 
-const result = clearDigits("abcd123");
-console.log(result);
+console.log(clearDigits("abc"));      // "abc"
+console.log(clearDigits("cb34"));     // ""
+console.log(clearDigits("abcd123"));  // "a"
