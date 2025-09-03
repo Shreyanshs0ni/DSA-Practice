@@ -17,3 +17,7 @@ var strStr = function (haystack, needle) {
 };
 
 console.log(strStr("dogandcat", "cat"));
+
+//Rabin–Karp Algorithm (Rolling Hash) – Average O(m + n)
+//KMP Algorithm (Knuth–Morris–Pratt) – O(m + n)
+//these has better complexities will do it later
