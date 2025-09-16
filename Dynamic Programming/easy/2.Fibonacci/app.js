@@ -11,4 +11,4 @@ const fib = (n) => {
   return b;
 };
 
-console.log(fib(4))
+console.log(fib(4));
