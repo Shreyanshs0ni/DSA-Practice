@@ -22,4 +22,4 @@ var duplicateZeros = function (arr) {
     i--;
     j--;
   }
-};
+};  s
