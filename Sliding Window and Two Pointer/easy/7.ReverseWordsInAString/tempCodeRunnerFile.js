@@ -1,0 +1,1 @@
+let end = arr[right] === " " ? right - 1 : right;
