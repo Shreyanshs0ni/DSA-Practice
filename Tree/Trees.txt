@@ -1,0 +1,8 @@
+Binary Tree → no rules
+BST → ordered
+AVL Tree → ordered + strictly balanced
+Red-Black Tree → ordered + loosely balanced
+Heap → complete tree + parent is max/min
+Complete Tree → filled left to right
+Full Tree → nodes have 0 or 2 children
+Perfect Tree → all levels full
