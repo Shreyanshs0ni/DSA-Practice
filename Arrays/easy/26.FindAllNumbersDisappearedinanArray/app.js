@@ -4,7 +4,7 @@
  */
 var findDisappearedNumbers = function (nums) {
   let map = new Map();
-  let res = [];
+  let res = new Array();
   let n = nums.length;
   for (let i = 0; i < n; i++) {
     map.set(nums[i], true);
@@ -17,4 +17,4 @@ var findDisappearedNumbers = function (nums) {
   return res;
 };
 
-console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+console.log(findDisappearedNumbers([4, 3, 2, 3, 2, 2, 3, 1]));
