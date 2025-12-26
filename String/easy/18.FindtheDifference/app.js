@@ -4,18 +4,25 @@
  * @return {character}
  */
 var findTheDifference = function (s, t) {
-  const count = new Map();
+  let freq = {};
 
-  for (const char of t) {
-    count.set(char, (count.get(char) || 0) + 1);
+  for (let ch of t) {
+    freq[ch] = (freq[ch] || 0) + 1;
+    console.log(freq);
+  }
+  for (let ch of s) {
+    freq[ch]--;
+    console.log(freq);
   }
 
-  for (const char of s) {
-    count.set(char, count.get(char) - 1);
-    if (count.get(char) === 0) {
-      count.delete(char);
-    }
+  for (let ch in freq) {
+    if (freq[ch] === 1) return ch;
   }
-
-  return Array.from(count.keys())[0];
 };
+console.log(findTheDifference("abcd", "abcde"));
+// var findTheDifference = function (s, t) {
+//   for (let char of s) {
+//     t = t.replace(char, "");
+//   }
+//   return t[0];
+// };
