@@ -27,12 +27,11 @@ var toHex = function (num) {
   let newArr = [];
   while (num >= 16) {
     let rest = num % 16;
-
     newArr.unshift(hexas[rest]);
-
     num = Math.floor(num / 16);
   }
   newArr.unshift(hexas[num]);
-
   return newArr.join("");
 };
+
+console.log(toHex(-1));

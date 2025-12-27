@@ -1,38 +1,24 @@
-/**
- * @param {string} pattern
- * @param {string} s
- * @return {boolean}
- */
 var wordPattern = function (pattern, s) {
   const words = s.split(" ");
-  if (pattern.length !== words.length) {
-    return false;
-  }
-  const map = new Map();
+  if (pattern.length !== words.length) return false;
+
+  const charToWord = new Map();
+  const wordToChar = new Map();
 
   for (let i = 0; i < pattern.length; i++) {
-    const char = pattern[i];
-    const word = words[i];
+    const ch = pattern[i];
+    const w = words[i];
 
-    if (map.has(char)) {
-      if (map.get(char) !== word) {
-        return false;
-      }
-    } else {
-      let isValueMapped = false;
-      for (let val of map.values()) {
-        if (val === word) {
-          isValueMapped = true;
-          break;
-        }
-      }
-      if (isValueMapped) {
-        return false;
-      }
-      map.set(char, word);
+    if (
+      (charToWord.has(ch) && charToWord.get(ch) !== w) ||
+      (wordToChar.has(w) && wordToChar.get(w) !== ch)
+    ) {
+      return false;
     }
+
+    charToWord.set(ch, w);
+    wordToChar.set(w, ch);
   }
+
   return true;
 };
-
-console.log(wordPattern("abba", "dog cat cat dog"));
