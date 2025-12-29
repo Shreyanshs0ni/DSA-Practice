@@ -1,7 +1,3 @@
-/**
- * @param {string[]} words
- * @return {number}
- */
 var uniqueMorseRepresentations = function (words) {
   const morse = new Map([
     ["a", ".-"],
@@ -31,15 +27,16 @@ var uniqueMorseRepresentations = function (words) {
     ["y", "-.--"],
     ["z", "--.."],
   ]);
-  let res = new Set();
-  for (let i = 0; i < words.length; i++) {
-    let morseWord = "";
-    for (let j = 0; j < words[i].length; j++) {
-      morseWord += morse.get(words[i][j]);
-    }
-    res.add(morseWord);
-  }
-  return res.size;
-};
 
-console.log(uniqueMorseRepresentations(["gin", "zen", "gig", "msg"]));
+  const seen = new Set();
+
+  for (let word of words) {
+    let morseWord = "";
+    for (let ch of word) {
+      morseWord += morse.get(ch);
+    }
+    seen.add(morseWord);
+  }
+
+  return seen.size;
+};
