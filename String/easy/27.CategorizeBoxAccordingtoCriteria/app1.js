@@ -17,11 +17,13 @@ var categorizeBox = function (length, width, height, mass) {
   if (mass >= 100) {
     heavy = true;
   }
-  if (heavy && bulky) return "Both";
-  if (heavy && !bulky) return "Heavy";
-  if (!heavy && bulky) return "Bulkt";
 
-  return "Neither";
+  return heavy ? (bulky ? "Both" : "Heavy") : bulky ? "Bulky" : "Neither";
+  //   if (heavy && bulky) return "Both";
+  //   if (heavy && !bulky) return "Heavy";
+  //   if (!heavy && bulky) return "Bulky";
+
+  //   return "Neither";
 };
 
 console.log(categorizeBox(1000, 35, 700, 300));
