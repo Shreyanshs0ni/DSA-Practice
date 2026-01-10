@@ -8,7 +8,7 @@ var groupThePeople = function (groupSizes) {
   for (let i = 0; i < groupSizes.length; i++) {
     if (!map.has(groupSizes[i])) {
       map.set(groupSizes[i], [i]);
-    } else {r
+    } else {
       map.get(groupSizes[i]).push(i);
     }
   }
