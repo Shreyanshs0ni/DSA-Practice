@@ -4,7 +4,8 @@
  */
 var isPalindrome = function (s) {
   let cleanS = "";
-  let alphabets = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let alphabets =
+    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let set = new Set([...alphabets]);
   for (let letter of s) {
     if (set.has(letter)) {
