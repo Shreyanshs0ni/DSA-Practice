@@ -3,17 +3,14 @@
  * @return {number}
  */
 var countAsterisks = function (string) {
-  let flag = 0;
+  let flag = false;
   let count = 0;
-  for (let s of string) {
-    if (flag > 0 && s === "|") {
-      flag--;
-    } else if (s === "|") {
-      flag++;
-    } else {
-      if (flag === 0 && s === "*") {
-        count++;
-      }
+
+  for (let ch of string) {
+    if (ch === "|") {
+      flag = !flag;
+    } else if (!flag && ch === "*") {
+      count++;
     }
   }
   return count;
