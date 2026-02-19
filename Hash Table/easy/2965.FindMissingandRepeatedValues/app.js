@@ -12,7 +12,6 @@ var findMissingAndRepeatedValues = function (grid) {
   }
   let repeated = -1;
   let missing = -1;
-  let res = [];
 
   for (let i = 1; i <= n; i++) {
     if (!map.has(i)) {
