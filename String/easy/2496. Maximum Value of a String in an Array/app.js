@@ -3,17 +3,13 @@
  * @return {number}
  */
 var maximumValue = function (strs) {
-  let res = [];
-  for (let i of strs) {
-    let val = 0;
-    if (!Number.isFinite(+i)) {
-      val = i.length;
-      res += val;
-    } else {
-      res += Number(i);
-    }
+  let max = 0;
+  for (let str of strs) {
+    let num = Number(str);
+    let value = Number.isNaN(num) ? str.length : num;
+    max = Math.max(max, value);
   }
-  return Math.max(...res);
+  return max;
 };
 
 console.log(maximumValue(["alic3", "bob", "3", "4", "00000"])); //5
