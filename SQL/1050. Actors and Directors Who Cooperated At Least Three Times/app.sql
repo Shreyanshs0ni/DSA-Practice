@@ -1,8 +1,6 @@
-# Write your MySQL query statement below
-SELECT MAX(num) AS num
-FROM (
-    SELECT num
-    FROM MyNumbers
-    GROUP BY num
-    HAVING COUNT(num) = 1
-) AS unique_numbers;
+/* Write your T-SQL query statement below */
+
+select actor_id, director_id
+from actorDirector
+group by actor_id, director_id
+having count(*) >= 3;
