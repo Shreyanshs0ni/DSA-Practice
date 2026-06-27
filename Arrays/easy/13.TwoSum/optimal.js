@@ -14,17 +14,19 @@ function twoSumExists(arr, target) {
   return false;
 }
 function twoSumIndices(arr, target) {
-  let numWithIndex = arr.map((val, idx) => [val, idx]);
-
+  let numWithIndex = arr.map((value, index) => [value, index]);
   numWithIndex.sort((a, b) => a[0] - b[0]);
+
   let left = 0;
 
   let right = arr.length - 1;
 
   while (left < right) {
-    if (numWithIndex[left][0] + numWithIndex[right][0] === target) {
+    let sum = numWithIndex[left][0] + numWithIndex[right][0];
+    if (sum === target) {
       return [numWithIndex[left][1], numWithIndex[right][1]];
-    } else if (numWithIndex[left][0] + numWithIndex[right][0] > target) {
+    }
+    if (sum > target) {
       right--;
     } else {
       left++;
