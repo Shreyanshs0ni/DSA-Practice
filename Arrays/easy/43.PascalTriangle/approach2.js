@@ -3,7 +3,7 @@ function printRow(n) {
   console.log(ans);
   for (let i = 1; i < n; i++) {
     ans = ans * (n - i);
-    ans = ans / i + 1;
+    ans = ans / i;
     console.log(ans);
   }
 }
