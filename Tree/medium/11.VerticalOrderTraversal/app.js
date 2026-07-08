@@ -7,7 +7,7 @@ class Node {
 }
 
 function VerticalOrderTraversal(root) {
-  if (!root) return res;
+  if (!root) return [];
   let q = [];
   q.push([root, 0, 0]);
   let map = new Map();
