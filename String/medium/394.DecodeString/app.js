@@ -5,12 +5,12 @@ var decodeString = function (s) {
   while (i < s.length) {
     if (s[i] >= "0" && s[i] <= "9") {
       let digit = 0;
-      while (s[i] >= "0" && s[i] <= "9") {
+      while (i < s.length && s[i] >= "0" && s[i] <= "9") {
         digit = digit * 10 + s[i] * 1;
         i++;
       }
       numStack.push(digit);
-      i--;
+      continue;
     } else if (s[i] === "]") {
       let char = "";
       let repeated = "";
