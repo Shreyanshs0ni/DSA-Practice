@@ -23,7 +23,7 @@ function spiralOrder(matrix) {
     }
     if (left <= right) {
       for (let i = bottom; i >= top; i--) {
-        ans.push(matrix[i][left]);
+        ans.push(matrix[left][i]);
       }
       left++;
     }
